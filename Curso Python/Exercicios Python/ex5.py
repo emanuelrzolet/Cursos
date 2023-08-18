@@ -1,0 +1,5 @@
+numero1 = int(input("Digite o valor do nr: "))
+numero2 = int(input("Digite o valor do nr: "))
+numero3 = int(input("Digite o valor do nr: "))
+media = pow(numero1 * numero2 * numero3, 1/3)
+print(media)
