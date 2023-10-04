@@ -7,6 +7,23 @@
 	</head>
 	<body>
 		<h1>Sistema de multas</h1>
-        <input type="number" name="" id="">
+		<label for="txtvel">Velocidade do carro: </label>
+		<input type="number" name="txtvel" id="txtvel" />
+		<input type="button" value="Verificar" onclick="calcular()" />
+		<div id="res"></div>
+		<script>
+			function calcular() {
+				var txtv = window.document.querySelector("input#txtvel");
+				var res = window.document.querySelector("div#res");
+				var vel = Number(txtv.value);
+				res.innerHTML = `<p>Sua Velocidade atual é de: <strong>${vel} Km/h</strong></p>`;
+				if (vel >= 88) {
+					res.innerHTML += `<p>Acima do limite de velocidade! <strong>Você foi multado!</strong></p>`;
+				} else {
+					res.innerHTML += `<p>Respeitou o limite de velocidade!</p>`;
+				}
+				res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`;
+			}
+		</script>
 	</body>
 </html>
