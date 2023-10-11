@@ -4,21 +4,33 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Modelo</title>
-        <link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
 		<header>
-			<h1>Título</h1>
+			<h1>Vamos contar</h1>
 		</header>
 		<main>
 			<section>
-				<div>Teste</div>
-				<div>teste</div>
+				<article id="inicio">
+					<label for="inicio">Início:</label>
+					<input type="number" name="inicio" id="inicio" />
+				</article>
+				<article id="fim">
+					<label for="fim">Fim: </label>
+					<input type="number" name="fim" id="fim" />
+				</article>
+				<article id="passo">
+					<label for="passo">Passo: </label>
+					<input type="number" name="passo" id="passo" />
+				</article>
+				<button type="submit" onclick="calcular()">Contar</button>
+				<article id="resultado">Preparando contagem</article>
 			</section>
 		</main>
 		<footer>
 			<p>&copy;CursoemVideo</p>
 		</footer>
-        <script src="script.js"></script>
+		<script src="script.js"></script>
 	</body>
 </html>
