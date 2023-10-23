@@ -1,11 +1,10 @@
-{%load static%}
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Add Tasks</title>
-		<link rel="stylesheet" href="%static 'tasks/styles.css'%" />
-	</head>
-	<body></body>
-</html>
+{% extends "tasks/layout.html" %} {%block body%}
+<h1>Add Task</h1>
+<form action="{% url 'tasks:add'%}" method="post">
+	{% csrf_token %}
+	<br />
+	{{forms}}
+	<input type="submit" />
+</form>
+<a href="{%url 'tasks:index'%}">Get back</a>
+{%endblock%}
