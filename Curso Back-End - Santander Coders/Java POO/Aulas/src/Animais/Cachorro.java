@@ -1,6 +1,7 @@
 package Animais;
 
 public class Cachorro {
+    
     public String nome;
     public String acao;
     public String cor;
@@ -8,6 +9,29 @@ public class Cachorro {
     public double peso;
     public int tamanhoDoRabo;
     public String estadoDoEspirito;
+    //Construtores
+
+
+
+
+
+
+
+
+
+    public Cachorro(String nome, double peso) {
+        this.nome = nome;
+        this.peso = peso;
+    }
+
+
+
+
+
+
+
+
+    //Metodos
     public void comer(){}
     public void latir(){
         System.out.println("Au AU");

@@ -3,7 +3,7 @@ import java.util.Scanner;
 import Animais.Cachorro;
 public class aula3 {
     public static void main(String[] args) {
-        Cachorro piche = new Cachorro();
+        Cachorro piche = new Cachorro("bilu",10);
         piche.nome = "Piche";
         piche.altura = 30;
         piche.peso = 9.1;
