@@ -1,0 +1,65 @@
+1- O que monitorar?
+	OLT FIBERHOME
+		SAUDE										
+				CPU - 1.3.6.1.4.1.5875.800.3.9.8.1.1.5		
+				MEMORIA	1.3.6.1.4.1.5875.800.3.9.8.1.1.6	
+				TEMPERATURA	1.3.6.1.4.1.5875.800.3.9.4.5		
+				STATUS	ICMP UP DOWN				
+			
+		SERVIÇOS
+
+PON LLD
+LLD						Prototype
+DESC - 1.3.6.1.2.1.2.2.1.2 		STATUS PONs "IF-MIB" 1.3.6.1.2.1.2.2.1.8
+						TEMPERATURA PON -  1.3.6.1.4.1.5875.800.3.9.3.4.1.11
+						TOTAL ONTS PROVISIONADAS - 1.3.6.1.4.1.5875.800.3.9.3.4.1.12
+
+ONU LLD
+LLD						Prototype
+SERIAL - 1.3.6.1.4.1.5875.800.3.1.1	ONTs RX - 1.3.6.1.4.1.5875.800.3.9.3.3.1.6 
+						DISTANCIA das ONTs - 1.3.6.1.4.1.5875.800.3.9.6.1.1.1
+						TATUS e ALARMES - 1.3.6.1.4.1.5875.800.3.10.1.1.11
+
+
+TRAFEGO DE REDE - "IF-MIB" LLD
+LLD						Prototype
+DESC - 1.3.6.1.2.1.2.2.1.2		IN - 1.3.6.1.2.1.31.1.1.1.6
+						OUT - 1.3.6.1.2.1.31.1.1.1.10
+												
+2- Quais os protocolos e metodos para monitorar?				
+		SNMP 
+		MIB-OID - Solicitar ao Distribuidor/Fabricante
+		MIB-OID - Pesquisa no Google-- 
+3- Configurar os dispositivos SNMP
+		IP - SNMP - HABILITAR SNMP - COMMUNITIY
+ 				TELNET - cd service
+				set snmp community readwrite adsl
+4- Criar Itens no Zabbix
+5- Criar os Dashboars no Grafana
+
+	SINAL ONTs RX  1.3.6.1.4.1.5875.800.3.9.3.3.1.6
+	DESCRICAO 1.3.6.1.4.1.5875.800.3.1.1 (onuWhiteList,MAC,SLOT,PON,ONUTYPE,PNUnº...)
+      MAC ONUS Autorizadas: 1.3.6.1.4.1.5875.800.3.10.1.1.10
+	  Slot ONUS Autorizadas: 1.3.6.1.4.1.5875.800.3.10.1.1.2
+	  Pon ONU Autorizadas: 1.3.6.1.4.1.5875.800.3.10.1.1.3
+	  ID da ONU Autorizada: 1.3.6.1.4.1.5875.800.3.10.1.1.4
+	  ONU Type: 1.3.6.1.4.1.5875.800.3.10.1.1.5
+	  Versão de SW ONU Autorizada: 1.3.6.1.4.1.5875.800.3.10.1.1.12
+	  Versão de HW ONU Autorizada: 1.3.6.1.4.1.5875.800.3.10.1.1.13
+	  Versão de FW ONU Autorizada: 1.3.6.1.4.1.5875.800.3.10.1.1.14
+	  
+TOTAL ONTS PROVISIONADAS 
+STATUS ALARMES DYNG_GASP LINK_LOSS  ONLINE OFFLINE -  1.3.6.1.4.1.5875.800.3.10.1.1.11
+
+DISTANCIA das ONTs 1.3.6.1.4.1.5875.800.3.9.6.1.1.1
+TRAFEGO DE REDE 
+Uplink
+   Uplink Nome das interfaces: 1.3.6.1.4.1.5875.800.3.9.3.5.1.2
+   Uplink Status Enable/Disable: 1.3.6.1.4.1.5875.800.3.9.3.5.1.4
+   Uplink Velocidade de negociação: 1.3.6.1.4.1.5875.800.3.9.3.5.1.5
+Cvlan
+   Cvlan Type: 1.3.6.1.4.1.5875.800.3.5.1.1.4 (1 tag, 3 Transparent)
+   Clan ID: 1.3.6.1.4.1.5875.800.3.5.1.1.4 (objetos por vlan de serviço)
+Vlan de Serviço
+     Vlan name: 1.3.6.1.4.1.5875.800.3.16.1.1.2
+     Vlan ID: 1.3.6.1.4.1.5875.800.3.16.1.1.3	 
